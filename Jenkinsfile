@@ -14,7 +14,7 @@ pipeline {
     stages {
        stage('Compile') {
             steps {
-                sh 'docker build'
+                sh 'docker build -t quangpham789/friends:0.1 .'
             }
         }
     }
