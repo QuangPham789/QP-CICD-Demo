@@ -34,7 +34,7 @@ pipeline {
        stage ('migrate database'){
             
             steps {
-                sh 'docker-compose up db'
+                sh 'docker-compose up db -d'
                 }
        }
         
