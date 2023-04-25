@@ -14,7 +14,7 @@ pipeline {
     stages {
        stage('Compile') {
             steps {
-                sh 'make setup'
+                sh 'docker build'
             }
         }
     }
