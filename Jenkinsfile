@@ -12,7 +12,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                 app = docker.build("qp/demo-pipeline")
+                echo 'building'
+                sh 'cd /var/lib/jenkins/workspace/demo-pipeline/cmd/serverd'
+                sh ' go build'
+                echo 'success'
             }
         }
     }
