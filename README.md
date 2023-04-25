@@ -1,4 +1,4 @@
-# **Project: friend-management**
+# **Project: friends-management**
 ### Quick Run Project:
 - Setup: make setup
 - Run app: make run
