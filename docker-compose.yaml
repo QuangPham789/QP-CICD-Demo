@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - "8082:8082"
     environment:
       DB_SOURCE: "postgres://friends-management:@db:5432/friends-management?sslmode=disable"
     networks:
