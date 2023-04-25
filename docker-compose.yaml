@@ -31,15 +31,15 @@ services:
     volumes:
       - db:/var/lib/postgresql/data
 
-  db-migrate:
-    container_name: friends-management-db-migrate-dev
-    image: migrate/migrate:v4.15.1
-    restart: "no"
-    entrypoint: ""
-    networks:
-      - network
-    depends_on:
-      - db
+#   db-migrate:
+#     container_name: friends-management-db-migrate-dev
+#     image: migrate/migrate:v4.15.1
+#     restart: "no"
+#     entrypoint: ""
+#     networks:
+#       - network
+#     depends_on:
+#       - db
 
 # networks to be created to facilitate communication between containers
 networks:
