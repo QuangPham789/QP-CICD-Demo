@@ -12,9 +12,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building'
-                sh 'make setup'
-                echo 'Success'
+                 app = docker.build("qp/demo-pipeline")
+                    app.inside {
+                        sh 'echo $(curl localhost:5432)'
+                    }
             }
         }
     }
