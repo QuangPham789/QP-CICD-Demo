@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building'
-                sh 'go build'
+                sh 'make setup'
                 echo 'Success'
             }
         }
