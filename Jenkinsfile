@@ -12,7 +12,16 @@ pipeline {
         GO111MODULE = 'on'
     }
     stages {
-       stage('Compile') {
+       stage ('verify tooling'){
+            sh '''
+                docker version
+                docker info 
+                docker compose version
+                curl --version
+                jq --version
+            '''
+       }
+       stage('docker build') {
             steps {
                 sh 'docker build -t quangpham789/friends:0.1 .'
             }
