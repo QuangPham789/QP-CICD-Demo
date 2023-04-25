@@ -20,13 +20,27 @@ pipeline {
                 docker info 
                 docker compose version
                 curl --version
-                jq --version
             '''
                 }
        }
-       stage('docker build') {
+        
+       stage ('prune docker data'){
+            
             steps {
-                sh 'docker build -t quangpham789/friends:0.1 .'
+                sh 'docker system prune -a --volumnes -f'
+                }
+       }
+        
+       stage ('migrate database'){
+            
+            steps {
+                sh 'docker-compose up db -d'
+                }
+       }
+        
+       stage('docker run') {
+            steps {
+                sh 'docker-compose up app'
             }
         }
     }
