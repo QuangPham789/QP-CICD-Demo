@@ -8,14 +8,13 @@ pipeline {
     tools {
         go 'go 1.19'
     }
-    
+     environment {
+        GO111MODULE = 'on'
+    }
     stages {
-        stage('Build') {
+       stage('Compile') {
             steps {
-                echo 'building'
-                sh 'cd /var/lib/jenkins/workspace/demo-pipeline/cmd/serverd'
-                sh ' go build'
-                echo 'success'
+                sh 'go build'
             }
         }
     }
