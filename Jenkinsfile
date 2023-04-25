@@ -14,7 +14,7 @@ pipeline {
     stages {
        stage('Compile') {
             steps {
-                sh 'go build'
+                sh 'make setup'
             }
         }
     }
