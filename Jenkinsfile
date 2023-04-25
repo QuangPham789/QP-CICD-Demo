@@ -13,9 +13,6 @@ pipeline {
         stage('Build') {
             steps {
                  app = docker.build("qp/demo-pipeline")
-                    app.inside {
-                        sh 'echo $(curl localhost:5432)'
-                    }
             }
         }
     }
