@@ -22,6 +22,6 @@ RUN go get github.com/lib/pq
 RUN go build ./cmd/serverd/main.go
 
 # container listens on specified network ports at runtime
-EXPOSE 8080
+EXPOSE 8082
 
 CMD ["./main"]
