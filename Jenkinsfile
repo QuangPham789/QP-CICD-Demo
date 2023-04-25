@@ -12,17 +12,17 @@ pipeline {
         GO111MODULE = 'on'
     }
     stages {
-       stage ('verify tooling'){
+//        stage ('verify tooling'){
             
-            steps {
-                sh '''
-                docker version
-                docker info 
-                docker compose version
-                curl --version
-            '''
-                }
-       }
+//             steps {
+//                 sh '''
+//                 docker version
+//                 docker info 
+//                 docker compose version
+//                 curl --version
+//             '''
+//                 }
+//        }
         
        stage ('prune docker data'){
             
@@ -31,16 +31,17 @@ pipeline {
                 }
        }
         
-       stage ('migrate database'){
+//        stage ('migrate database'){
             
-            steps {
-                sh 'docker-compose up -d db'
-                }
-       }
+//             steps {
+//                 sh 'docker-compose up -d db'
+//                 }
+//        }
         
        stage('docker run') {
             steps {
-                sh 'docker-compose up app'
+                sh 'docker-compose up -d'
+                 sh 'docker ps'
             }
         }
     }
