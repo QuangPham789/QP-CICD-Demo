@@ -13,13 +13,16 @@ pipeline {
     }
     stages {
        stage ('verify tooling'){
-            sh '''
+            
+            steps {
+                sh '''
                 docker version
                 docker info 
                 docker compose version
                 curl --version
                 jq --version
             '''
+                }
        }
        stage('docker build') {
             steps {
