@@ -26,9 +26,9 @@ func main() {
 	router := initRouter(dbConn)
 
 	// Start server with port 8080
-	log.Println("Server start at port 8083")
-	if err := http.ListenAndServe("0.0.0.0:8083", router); err != nil {
-		log.Println("Error start server with port 8083", err)
+	log.Println("Server start at port 8088")
+	if err := http.ListenAndServe(":8088", router); err != nil {
+		log.Println("Error start server with port 8088", err)
 	}
 }
 
